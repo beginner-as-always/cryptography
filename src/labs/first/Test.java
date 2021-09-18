@@ -10,10 +10,10 @@ public class Test {
     public static void main(String[] args) {
         System.out.println("Лабораторная работа №1\n");
 
-        System.out.println("Шифр Цезаря\n----------");
+        /*System.out.println("Шифр Цезаря\n----------");
         caesar();
 
-        System.out.println("\n####################\n");
+        System.out.println("\n####################\n");*/
 
         System.out.println("Решетка Кардано\n----------");
         cardan();

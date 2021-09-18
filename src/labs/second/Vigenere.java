@@ -10,7 +10,7 @@ public class Vigenere {
 
     public static String encrypt(String message, String key) {
         message = Utils.removeNonWordCharacters(message);
-        key = keyExtender(Utils.removeNonWordCharacters(key), message.length());
+        key = adjustKeyLength(Utils.removeNonWordCharacters(key), message.length());
 
         StringBuilder cryptogram = new StringBuilder();
 
@@ -26,7 +26,7 @@ public class Vigenere {
 
     public static String decrypt(String cryptogram, String key) {
         cryptogram = Utils.removeNonWordCharacters(cryptogram);
-        key = keyExtender(Utils.removeNonWordCharacters(key), cryptogram.length());
+        key = adjustKeyLength(Utils.removeNonWordCharacters(key), cryptogram.length());
 
         StringBuilder originalMessage = new StringBuilder();
 
@@ -40,7 +40,7 @@ public class Vigenere {
         return originalMessage.toString();
     }
 
-    private static String keyExtender(String key, int length) {
+    private static String adjustKeyLength(String key, int length) {
         StringBuilder result = new StringBuilder();
 
         result.append(key.repeat(length / key.length()));
