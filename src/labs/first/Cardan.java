@@ -74,11 +74,18 @@ public class Cardan {
         HashSet<Integer> set = new HashSet<>();
         grille = new int[size][size];
 
-        while (set.size() < size * size / 4) {
+        while (set.size() < size * size / 4 && set.size() * 4 < message.length()) {
             int x = (int) (Math.random() * size);
             int y = (int) (Math.random() * size);
 
-            if (set.add(constructor[x][y]))
+            if (
+//                Adjacency check
+//                ((y > 0 && grille[x][y - 1] != 1) &&
+//                (y < size - 1 && grille[x][y + 1] != 1) &&
+//                (x > 0 && grille[x - 1][y] != 1) &&
+//                (x < size - 1 && grille[x + 1][y] != 1)) &&
+                set.add(constructor[x][y])
+            )
                 grille[x][y] = 1;
         }
     }
