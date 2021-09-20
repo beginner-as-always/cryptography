@@ -38,33 +38,25 @@ public class Cardan {
     private void generateConstructor(int size) {
         constructor = new int[size][size];
 
-        int k = 1;
-
-        for (int i = 0; i < size / 2; i++) {
+        for (int i = 0, k = 1; i < size / 2; i++) {
             for (int j = 0; j < size / 2; j++) {
                 constructor[i][j] = k++;
             }
         }
 
-        k = 1;
-
-        for (int j = size - 1; j >= size / 2; j--) {
+        for (int j = size - 1, k = 1; j >= size / 2; j--) {
             for (int i = 0; i < size / 2; i++) {
                 constructor[i][j] = k++;
             }
         }
 
-        k = 1;
-
-        for (int i = size - 1; i >= size / 2; i--) {
+        for (int i = size - 1, k = 1; i >= size / 2; i--) {
             for (int j = size - 1; j >= size / 2; j--) {
                 constructor[i][j] = k++;
             }
         }
 
-        k = 1;
-
-        for (int j = 0; j < size / 2; j++) {
+        for (int j = 0, k = 1; j < size / 2; j++) {
             for (int i = size - 1; i >= size / 2; i--) {
                 constructor[i][j] = k++;
             }
