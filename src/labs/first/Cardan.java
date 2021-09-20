@@ -3,6 +3,7 @@ package labs.first;
 import util.Utils;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Cardan {
     private static final int SMALL = 8;
@@ -71,7 +72,7 @@ public class Cardan {
     }
 
     private void generateGrille() {
-        HashSet<Integer> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
         grille = new int[size][size];
 
         while (set.size() < size * size / 4 && set.size() * 4 < message.length()) {
