@@ -1,7 +1,6 @@
 package labs.first;
 
 import util.Utils;
-
 import java.util.Scanner;
 
 public class Test {
@@ -10,10 +9,10 @@ public class Test {
     public static void main(String[] args) {
         System.out.println("Лабораторная работа №1\n");
 
-        /*System.out.println("Шифр Цезаря\n----------");
+        System.out.println("Шифр Цезаря\n----------");
         caesar();
 
-        System.out.println("\n####################\n");*/
+        System.out.println("\n####################\n");
 
         System.out.println("Решетка Кардано\n----------");
         cardan();
@@ -38,7 +37,8 @@ public class Test {
 
         char[][] cryptogram = cardan.encrypt();
         int[][] cardanGrille = cardan.getGrille();
-        String originalMessage = cardan.decrypt(cryptogram, cardanGrille);
+        String key = cardan.getKey();
+        String originalMessage = cardan.decrypt(cryptogram, key);
 
         System.out.println("Шифр: ");
         Utils.printMatrix(cryptogram);
@@ -46,6 +46,8 @@ public class Test {
         System.out.println();
         System.out.println("Решетка Кардано: ");
         Utils.printMatrix(cardanGrille);
+
+        System.out.println("\nКлюч: " + key);
 
         System.out.println();
         System.out.println("Расшифрованное сообщение: ");

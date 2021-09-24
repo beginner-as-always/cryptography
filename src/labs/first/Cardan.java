@@ -18,6 +18,7 @@ public class Cardan {
 
     private String message;
     private char[][] cryptogram;
+    private String key;
 
     public Cardan(String message) {
         this.message = Utils.removeNonWordCharacters(message);
@@ -81,6 +82,27 @@ public class Cardan {
             )
                 grille[x][y] = 1;
         }
+
+        StringBuilder key = new StringBuilder();
+
+        for (int[] row : grille)
+            for (int n : row)
+                key.append(n);
+
+        this.key = key.toString();
+    }
+
+    private int[][] generateGrille(String key) {
+        int size = (int) Math.sqrt(key.length());
+        int[][] cardanGrille = new int[size][size];
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                cardanGrille[i][j] = key.charAt(i * size + j) - '0';
+            }
+        }
+
+        return cardanGrille;
     }
 
     public char[][] encrypt() {
@@ -108,8 +130,9 @@ public class Cardan {
         return cryptogram;
     }
 
-    public String decrypt(char[][] cryptogram, int[][] grille) {
+    public String decrypt(char[][] cryptogram, String key) {
         StringBuilder result = new StringBuilder();
+        int[][] grille = generateGrille(key);
 
         int size = cryptogram.length;
 
@@ -143,5 +166,9 @@ public class Cardan {
 
     public int[][] getGrille() {
         return grille;
+    }
+
+    public String getKey() {
+        return key;
     }
 }
