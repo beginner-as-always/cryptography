@@ -83,6 +83,10 @@ public class Cardan {
                 grille[x][y] = 1;
         }
 
+        generateKey();
+    }
+
+    private void generateKey() {
         StringBuilder key = new StringBuilder();
 
         for (int[] row : grille)

@@ -1,7 +1,6 @@
 package labs.first;
 
 import util.Utils;
-
 import java.util.Map;
 
 public class Caesar {

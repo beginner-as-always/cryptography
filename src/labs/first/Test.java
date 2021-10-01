@@ -8,17 +8,25 @@ public class Test {
 
     public static void main(String[] args) {
         System.out.println("Лабораторная работа №1\n");
+        System.out.println("1. Шифр Цезаря");
+        System.out.println("2. Шифр Кардано\n");
 
-        System.out.println("Шифр Цезаря\n----------");
-        caesar();
+        System.out.print("Ваш выбор: ");
 
-        System.out.println("\n####################\n");
-
-        System.out.println("Решетка Кардано\n----------");
-        cardan();
+        switch (Integer.parseInt(scanner.nextLine())) {
+            case 1:
+                caesar();
+                break;
+            case 2:
+                cardan();
+                break;
+            default:
+                System.out.println("Выберите 1 или 2");
+        }
     }
 
     private static void caesar() {
+        System.out.println("\nШифр Цезаря\n----------");
         System.out.print("Введите сообщение: ");
         String input = scanner.nextLine();
         System.out.print("Сдвиг: ");
@@ -29,6 +37,7 @@ public class Test {
     }
 
     private static void cardan() {
+        System.out.println("\nШифр Кардано\n----------");
         System.out.print("Введите сообщение: ");
         String input = scanner.nextLine();
         System.out.println();
