@@ -5,7 +5,7 @@ public class Vernam {
         int[] key = new int[msgLength];
 
         for (int i = 0; i < msgLength; i++)
-            key[i] = (int) (Math.random() * Integer.MAX_VALUE);
+            key[i] = (int) (Math.random() * (1 << 24));
 
         return key;
     }

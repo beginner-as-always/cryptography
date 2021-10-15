@@ -1,5 +1,6 @@
 package rgrs.first;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test {
@@ -17,6 +18,7 @@ public class Test {
         String cryptogram = Vernam.process(message, key);
         String decryptedMessage = Vernam.process(cryptogram, key);
 
+        System.out.println("Ключ: " + Arrays.toString(key));
         System.out.println("Шифр: " + cryptogram);
         System.out.println("Расшифрованное сообщение: " + decryptedMessage);
     }
