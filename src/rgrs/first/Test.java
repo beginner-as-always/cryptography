@@ -18,7 +18,8 @@ public class Test {
         String cryptogram = Vernam.process(message, key);
         String decryptedMessage = Vernam.process(cryptogram, key);
 
-        System.out.println("Ключ: " + Arrays.toString(key));
+        System.out.println("Ключ (последовательность): " + Arrays.toString(key));
+        System.out.println("Ключ: " + Vernam.stringifyKey(key));
         System.out.println("Шифр: " + cryptogram);
         System.out.println("Расшифрованное сообщение: " + decryptedMessage);
     }

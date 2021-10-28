@@ -7,6 +7,8 @@ public class Caesar {
     private static final char[] alphabet = Utils.getAlphabet();
     private static final Map<Character, Integer> alphabetMap = Utils.getAlphabetMap();
 
+    private Caesar() {}
+
     public static String process(String message, int shift) {
         shift %= alphabet.length;
         message = Utils.removeNonWordCharacters(message);

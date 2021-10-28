@@ -8,6 +8,8 @@ public class Vigenere {
     private static final char[] alphabet = Utils.getAlphabet();
     private static final Map<Character, Integer> alphabetMap = Utils.getAlphabetMap();
 
+    private Vigenere() {}
+
     public static String encrypt(String message, String key) {
         message = Utils.removeNonWordCharacters(message);
         key = adjustKeyLength(Utils.removeNonWordCharacters(key), message.length());
